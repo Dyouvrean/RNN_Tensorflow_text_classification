@@ -109,7 +109,7 @@ model.compile(loss=tensorflow.keras.losses.CategoricalCrossentropy(from_logits=T
               metrics=["CategoricalAccuracy"])
 model.summary()
 epochs = 100
-history = model.fit(train_ds.shuffle(2000).batch(128),
+history = model.fit(test_ds.shuffle(2000).batch(128),
                     epochs=epochs,
                     validation_data=valid_ds.batch(128),
                     verbose=1)
